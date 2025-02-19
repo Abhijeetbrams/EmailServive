@@ -63,6 +63,8 @@ public class SendEmailEventConsumer {
         // which is created using the properties and authenticator object
         Session session = Session.getInstance(props, auth);
 
+        // Why ? - Because we need to send the email and for sending the email we need the session object.
+        // which is created using the properties and authenticator object
         EmailUtil.sendEmail(session, sendEmailEvent.getRecipient(),sendEmailEvent.getSubject(), sendEmailEvent.getBody());
 
     }
